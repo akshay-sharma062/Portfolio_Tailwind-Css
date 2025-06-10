@@ -9,13 +9,12 @@
     <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <script>
-     const menuBtn = document.getElementById('menu-btn');
-    const menu = document.getElementById('menu');
-
-    menuBtn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-      menu.classList.toggle('flex');
-    });
+      const toggleBtn = document.getElementById('toggleDark');
+      const htmlEl = document.documentElement;
+  
+      toggleBtn.addEventListener('click', () => {
+        htmlEl.classList.toggle('dark');
+      });
     </script>
     
     <style>
@@ -56,37 +55,45 @@
   </head>
   <body class="bg-black p-20 ">
     <!-- navbar -->
-    <nav class="bg-black opacity-80 z-50 w-full   sticky top-0 animate-fade-down">
-      <div class="flex justify-between items-center px-6 py-4">
-        <!-- Logo -->
+    <nav >
+      <div class="sm:flex flex-wrap w-screen sm:w-full bg-black z-2 py-4 sm:-mt-10 opacity-80  justify-between animate-fade-down sm:sticky sm:top-36 fixed self-center top-10">
         <div>
-          <span class="text-5xl text-emerald-400 mask-b-from-neutral-50">Akshay</span>
+          <span class="text-5xl text-emerald-400 mask-b-from-neutral-50"
+            >Akshay</span
+          >
         </div>
-  
-        <!-- Hamburger Icon (Visible on small screens) -->
-        <div class="sm:hidden">
-          <button id="menu-btn" class="text-teal-400 focus:outline-none text-3xl">&#9776;</button>
-        </div>
-  
-        <!-- Menu Items -->
-        <div id="menu" class="hidden sm:flex flex-col sm:flex-row gap-8 sm:items-center text-center text-xl font-serif py-3 sm:py-0 tracking-wider animate-pulse hover:animate-none  duration-500">
-          <a href="#home">
-            <span class="hover:text-amber-100 hover:opacity-45 duration-500 text-teal-400 font-light cursor-pointer">Home</span>
+        <div
+          class="py-3 opacity-100 tracking-wider animate-pulse hover:animate-none font-serif border-[px] sm:px-6 gap-8 text-center text-xl  rounded-4xl hover:border-b-indigo-600 hover:border-t-indigo-600 border-t-teal-400  border-b-teal-400 duration-500  flex right-20"
+        >
+          <a href="#home"
+            ><span
+              class="hover:text-amber-100 hover:opacity-45 duration-500  text-teal-400 font-light cursor-pointer"
+              >Home</span
+            >
           </a>
-          <a href="#skills">
-            <span class="hover:text-amber-100 hover:opacity-45 duration-500 text-teal-400 font-light cursor-pointer">Skills</span>
+          <a href="#skills"
+            ><span
+              class="hover:text-amber-100 duration-500 hover:opacity-45  font-light text-teal-400 cursor-pointer "
+              >Skills</span
+            >
           </a>
-          <a href="#projects">
-            <span class="hover:text-amber-100 hover:opacity-45 duration-500 text-teal-400 font-light cursor-pointer">Projects</span>
-          </a>
-          <a href="#contact">
-            <span class="hover:text-amber-100 hover:opacity-45 duration-500 text-teal-400 font-light cursor-pointer">Contact</span>
+          <a href="#projects"
+            ><span
+              class="hover:text-amber-100 duration-500 hover:opacity-45 font-light text-teal-400 cursor-pointer"
+              >Projects</span
+            ></a
+          >
+          <a href="#contact"
+            ><span
+              class="hover:text-amber-100 duration-500 hover:opacity-45  font-light text-teal-400 cursor-pointer"
+              >Contact</span
+            >
           </a>
         </div>
       </div>
     </nav>
     <!-- hero -->
-     <section class="sm:mt-8 sm:pt-20 lg:flex opacity-60  sm:w-screen w-full"  id="home">
+     <section class="sm:mt-8 sm:pt-20 lg:flex opacity-60  w-screen sm:w-full"  id="home">
 
          <div class="sm:w-xl">
             <div class=" sm:mt-20 mt-60 order-2">
@@ -96,8 +103,8 @@
             </div>
              <p class="text-white my-4 animate-flip-up  text-left sm:text-2xl delay-[100ms] duration-[600ms] taos:[transform:translate3d(-100px,0,0)_scale(0.6)] taos:opacity-0" data-taos-offset="100">With a passion for creating beautiful and functional websites. With a strong background in HTML, CSS, JavaScript, and React, I enjoy building user-centric web applications. I'm always learning and striving to improve my skills and stay updated with the latest web technologies.</p>
             </div>
-            <div class="flex justify-center  order-1 sm:w-xl align-middle delay-[100ms] duration-[600ms] taos:[transform:translate3d(-100px,0,0)_scale(0.6)] taos:opacity-0" data-taos-offset="100">
-            <img src="InShot_20241117_230829313.png" class="p-0  h-150 w-70 items-center sm:ml-50 ">
+            <div class=" order-1 sm:w-xl align-middle delay-[100ms] duration-[600ms] taos:[transform:translate3d(-100px,0,0)_scale(0.6)] taos:opacity-0" data-taos-offset="100">
+            <img src="InShot_20241117_230829313.png" class="p-0  h-150 w-70 ml-50">
         </div>
          </div>
         </section>
@@ -128,7 +135,7 @@
      <!-- skills -->
     <section class="mt-8 lg:flex  w-screen sm:w-full " id="skills" >
 
-        <div class="w-3xs mt-10 sm:grid sm:w-screen my-10 opacity-60">
+        <div class="sm:w-2xs mt-10 sm:grid w-screen my-10 opacity-60">
           <h2 class="text-4xl sm:text-6xl font-bold text-shadow-cyan-500  text-blue-400 animate-bounce delay-[300ms] duration-[600ms] taos:translate-x-[20px] taos:opacity-0" data-taos-offset="300"> Skils </h2>
               <hr class="w-19 text-green-400 animate-ping ">
           
@@ -183,8 +190,8 @@
     </section>
 
     <!-- Projects -->
-     <section class="mt-8 pt-20 sm:w-full opacity-60" id="projects">
-      <div class=" ">
+     <section class="mt-8 pt-20  w-screen sm:w-full opacity-60" id="projects">
+      <div class="">
         <div class="my-4">
           <h2 class="sm:text-6xl text-4xl font-bold text-shadow-cyan-500  text-blue-400 animate-bounce delay-[300ms] duration-[600ms] taos:translate-x-[20px] taos:opacity-0" data-taos-offset="300"> My Projects </h2>
           <hr class="w-19 text-green-400 animate-ping ">
@@ -193,7 +200,7 @@
         <div class="my-20  ">
           <div class="projects-container sm:flex justify-between " data-taos-offset="200">
             <div
-              class="project-card my-15 bg-white sm:w-[320px] rounded-xl overflow-hidden shadow-[0_6px_16px_rgba(232,14,14,0.878)] transition-transform transition-shadow duration-300 hover:-translate-y-2 hover:shadow-[0_10px_24px_rgb(225,224,224)]
+              class="project-card my-15 bg-white w-[320px] rounded-xl overflow-hidden shadow-[0_6px_16px_rgba(232,14,14,0.878)] transition-transform transition-shadow duration-300 hover:-translate-y-2 hover:shadow-[0_10px_24px_rgb(225,224,224)]
               duration-[600ms] taos:[transform:perspective(2500px)_rotateX(-100deg)] taos:invisible taos:[backface-visibility:hidden]" data-taos-offset="300"
               >
               <img
@@ -215,7 +222,7 @@
             </div>
           
             <div
-              class="project-card my-15 bg-white sm:w-[320px] rounded-xl overflow-hidden shadow-[0_6px_16px_rgba(232,14,14,0.878)] transition-transform transition-shadow duration-300 hover:-translate-y-2 hover:shadow-[0_10px_24px_rgb(225,224,224)] duration-[600ms] taos:[transform:perspective(2500px)_rotateX(-100deg)] taos:invisible taos:[backface-visibility:hidden]" data-taos-offset="300"
+              class="project-card my-15 bg-white w-[320px] rounded-xl overflow-hidden shadow-[0_6px_16px_rgba(232,14,14,0.878)] transition-transform transition-shadow duration-300 hover:-translate-y-2 hover:shadow-[0_10px_24px_rgb(225,224,224)] duration-[600ms] taos:[transform:perspective(2500px)_rotateX(-100deg)] taos:invisible taos:[backface-visibility:hidden]" data-taos-offset="300"
               >
               <img
                 src="https://images.unsplash.com/photo-1614480633894-f3b7f4bb0e76?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2VhdGhlciUyMGFwcHxlbnwwfHwwfHx8MA%3D%3D"
@@ -236,7 +243,7 @@
             </div>
           
             <div
-              class="project-card my-15 bg-white sm:w-[320px] rounded-xl overflow-hidden shadow-[0_6px_16px_rgba(232,14,14,0.878)] transition-transform transition-shadow duration-300 hover:-translate-y-2 hover:shadow-[0_10px_24px_rgb(225,224,224)] duration-[600ms] taos:[transform:perspective(2500px)_rotateX(-100deg)] taos:invisible taos:[backface-visibility:hidden]" data-taos-offset="300""
+              class="project-card my-15 bg-white w-[320px] rounded-xl overflow-hidden shadow-[0_6px_16px_rgba(232,14,14,0.878)] transition-transform transition-shadow duration-300 hover:-translate-y-2 hover:shadow-[0_10px_24px_rgb(225,224,224)] duration-[600ms] taos:[transform:perspective(2500px)_rotateX(-100deg)] taos:invisible taos:[backface-visibility:hidden]" data-taos-offset="300""
             >
               <img
                 src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bXVzaWN8ZW58MHx8MHx8fDA%3D"
@@ -290,7 +297,7 @@
           </div>
       
           <!-- Contact Form -->
-          <div class="bg-gray-800 border-4 sm:w-full  border-transparent border-animate rounded-2xl p-8 duration-[300ms] taos:[transform:perspective(2500px)_rotateX(-100deg)] taos:invisible taos:[backface-visibility:hidden]" data-taos-offset="300">
+          <div class="bg-gray-800 border-4 sm:w-full w-screen  border-transparent border-animate rounded-2xl p-8 duration-[300ms] taos:[transform:perspective(2500px)_rotateX(-100deg)] taos:invisible taos:[backface-visibility:hidden]" data-taos-offset="300">
             <form class="space-y-6">
               <div>
                 <label class="block text-sm font-medium text-gray-300 mb-1" for="name">Name</label>
@@ -314,10 +321,10 @@
         </div>
       
       </section>
-      <footer class="sm:flex sm:w-full   relative mt-8 pt-20 opacity-60 delay-[300ms] duration-[600ms] sm:taos:scale-[1.2] taos:opacity-0" data-taos-offset="150">
+      <footer class="sm:flex sm:w-full w-screen relative mt-8 pt-20 opacity-60 delay-[300ms] duration-[600ms] taos:scale-[1.2] taos:opacity-0" data-taos-offset="150">
         <!-- Top Moving Border -->
-        <div class="top-border-animate h-1 sm:w-full w-full absolute top-0 left-0 mt-20"></div>
-        <div class="sm:max-w-7xl sm:mx-auto sm:px-6 py-10 flex flex-col md:flex-row justify-between items-center sm:gap-6 ">
+        <div class="top-border-animate h-1 sm:w-full w-screen absolute top-0 left-0 mt-20"></div>
+        <div class="sm:max-w-7xl mx-auto sm:px-6 py-10 flex flex-col md:flex-row justify-between items-center sm:gap-6 ">
           <!-- Name/Logo -->
           <div class="text-center md:text-left">
             <h2 class="sm:text-2xl font-bold text-cyan-400 animate-pulse">Akshay Sharma</h2>
